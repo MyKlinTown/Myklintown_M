@@ -98,8 +98,14 @@
             </div>
         </div>
 
+        <!-- Nouvelle question sur le poids des déchets -->
         <div class="question-block">
-            <label class="question-label">8. Fréquence de vidage des bacs dans votre quartier</label>
+            <label class="question-label">8. Quel est le poids approximatif des déchets que votre foyer produit chaque semaine ? (en kg)</label>
+            <input type="number" name="poids_dechets" step="0.5" min="0" placeholder="Ex: 5.5 kg">
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">9. Fréquence de vidage des bacs dans votre quartier</label>
             <div class="options">
                 <label class="option-item"><input type="radio" name="frequence_vidage" value="Tous les jours"> Tous les jours</label>
                 <label class="option-item"><input type="radio" name="frequence_vidage" value="2–3 fois par semaine"> 2–3 fois/semaine</label>
@@ -111,7 +117,7 @@
         </div>
 
         <div class="question-block">
-            <label class="question-label">9. Avez-vous déjà rencontré un problème de débordement ou dépôt sauvage près de chez vous ?</label>
+            <label class="question-label">10. Avez-vous déjà rencontré un problème de débordement ou dépôt sauvage près de chez vous ?</label>
             <div class="options">
                 <label class="option-item"><input type="radio" name="depot_sauvage" value="Jamais"> Jamais</label>
                 <label class="option-item"><input type="radio" name="depot_sauvage" value="Rarement (1-2 fois/an)"> Rarement</label>
@@ -122,7 +128,7 @@
         </div>
 
         <div class="question-block">
-            <label class="question-label">10. Que faites-vous généralement en cas de dépôt sauvage ?</label>
+            <label class="question-label">11. Que faites-vous généralement en cas de dépôt sauvage ?</label>
             <div class="options">
                 <label class="option-item"><input type="radio" name="action_depot" value="Je n'y prête pas attention"> Je n'y prête pas attention</label>
                 <label class="option-item"><input type="radio" name="action_depot" value="Je me plains aux voisins"> Je me plains aux voisins</label>
@@ -133,7 +139,7 @@
         </div>
 
         <div class="question-block">
-            <label class="question-label">11. Seriez-vous prêt à payer une petite contribution mensuelle (500–2000 FCFA) pour une collecte plus efficace et un suivi en temps réel ?</label>
+            <label class="question-label">12. Seriez-vous prêt à payer une petite contribution mensuelle (500–2000 FCFA) pour une collecte plus efficace et un suivi en temps réel ?</label>
             <div class="options">
                 <label class="option-item"><input type="radio" name="contribution" value="Oui, tout à fait"> Oui, tout à fait</label>
                 <label class="option-item"><input type="radio" name="contribution" value="Peut-être, selon les services"> Peut-être</label>
@@ -143,7 +149,7 @@
 
         <!-- ========== 3. Connaissance et intérêt MyKlinTown ========== -->
         <div class="question-block">
-            <label class="question-label">12. Avez-vous déjà entendu parler des bacs connectés ou applications de signalement ?</label>
+            <label class="question-label">13. Avez-vous déjà entendu parler des bacs connectés ou applications de signalement ?</label>
             <div class="options">
                 <label class="option-item"><input type="radio" name="connaissance" value="Oui"> Oui</label>
                 <label class="option-item"><input type="radio" name="connaissance" value="Non"> Non</label>
@@ -151,7 +157,7 @@
         </div>
 
         <div class="question-block">
-            <label class="question-label">13. Quelles fonctionnalités vous intéressent dans une application MyKlinTown ? (plusieurs choix)</label>
+            <label class="question-label">14. Quelles fonctionnalités vous intéressent dans une application MyKlinTown ? (plusieurs choix)</label>
             <div class="checkbox-group">
                 <label><input type="checkbox" name="interet_fonctions" value="Voir l'état des bacs sur carte"> Voir l'état des bacs</label>
                 <label><input type="checkbox" name="interet_fonctions" value="Signaler un dépôt sauvage avec photo"> Signaler avec photo</label>
@@ -161,7 +167,7 @@
         </div>
 
         <div class="question-block">
-            <label class="question-label">14. Sur une échelle de 1 à 5, quel est votre intérêt pour une telle application ?</label>
+            <label class="question-label">15. Sur une échelle de 1 à 5, quel est votre intérêt pour une telle application ?</label>
             <div class="options">
                 <label class="option-item"><input type="radio" name="interet_note" value="1"> 1 – Pas intéressé</label>
                 <label class="option-item"><input type="radio" name="interet_note" value="2"> 2 – Peu intéressé</label>
@@ -172,7 +178,7 @@
         </div>
 
         <div class="question-block">
-            <label class="question-label">15. À quelle fréquence l'utiliseriez-vous ?</label>
+            <label class="question-label">16. À quelle fréquence l'utiliseriez-vous ?</label>
             <div class="options">
                 <label class="option-item"><input type="radio" name="frequence_usage" value="Plusieurs fois par jour"> Plusieurs fois/jour</label>
                 <label class="option-item"><input type="radio" name="frequence_usage" value="Une fois par jour"> 1 fois/jour</label>
@@ -184,7 +190,7 @@
 
         <!-- Gamification -->
         <div class="question-block">
-            <label class="question-label">16. La gamification (points, badges) peut-elle vous motiver à mieux trier ?</label>
+            <label class="question-label">17. La gamification (points, badges) peut-elle vous motiver à mieux trier ?</label>
             <div class="options">
                 <label class="option-item"><input type="radio" name="gamification_motivation" value="Oui, beaucoup"> Oui, beaucoup</label>
                 <label class="option-item"><input type="radio" name="gamification_motivation" value="Un peu"> Un peu</label>
@@ -193,7 +199,7 @@
         </div>
 
         <div class="question-block">
-            <label class="question-label">17. Quels types de récompenses préféreriez-vous ?</label>
+            <label class="question-label">18. Quels types de récompenses préféreriez-vous ?</label>
             <div class="checkbox-group">
                 <label><input type="checkbox" name="recompenses" value="Réductions supermarchés"> Réductions supermarchés</label>
                 <label><input type="checkbox" name="recompenses" value="Produits éco-responsables"> Produits éco-responsables</label>
@@ -205,7 +211,7 @@
         </div>
 
         <div class="question-block">
-            <label class="question-label">18. Seriez-vous prêt à partager vos performances (points, classement) publiquement ?</label>
+            <label class="question-label">19. Seriez-vous prêt à partager vos performances (points, classement) publiquement ?</label>
             <div class="options">
                 <label class="option-item"><input type="radio" name="partage_performance" value="Oui, en public"> Oui, public</label>
                 <label class="option-item"><input type="radio" name="partage_performance" value="Uniquement avec mes amis"> Amis seulement</label>
@@ -215,7 +221,7 @@
 
         <!-- Attentes -->
         <div class="question-block">
-            <label class="question-label">19. Quels sont selon vous les trois principaux problèmes liés aux déchets dans votre quartier ?</label>
+            <label class="question-label">20. Quels sont selon vous les trois principaux problèmes liés aux déchets dans votre quartier ?</label>
             <div class="checkbox-group">
                 <label><input type="checkbox" name="problemes" value="Manque de bacs"> Manque de bacs</label>
                 <label><input type="checkbox" name="problemes" value="Bacs toujours pleins"> Bacs toujours pleins</label>
@@ -228,12 +234,12 @@
         </div>
 
         <div class="question-block">
-            <label class="question-label">20. Suggestions pour améliorer la gestion des déchets dans votre commune/quartier ?</label>
+            <label class="question-label">21. Suggestions pour améliorer la gestion des déchets dans votre commune/quartier ?</label>
             <input type="text" name="suggestions" style="width:100%" placeholder="Votre idée...">
         </div>
 
         <div class="question-block">
-            <label class="question-label">21. Acceptez-vous d'être recontacté pour tester le prototype ?</label>
+            <label class="question-label">22. Acceptez-vous d'être recontacté pour tester le prototype ?</label>
             <div class="options">
                 <label class="option-item"><input type="radio" name="recontact" value="Oui"> Oui, email : <input type="email" name="email" placeholder="votre@email.com" style="width:200px"></label>
                 <label class="option-item"><input type="radio" name="recontact" value="Non"> Non</label>
