@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>MyKlinTown – Sondage citoyen</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #f0fdf4; font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; padding: 2rem 1rem; line-height: 1.5; }
+        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 2rem; box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.1); overflow: hidden; border: 1px solid #cbd5e1; }
+        .header { background: #2E7D32; padding: 1.5rem 2rem; text-align: center; color: white; }
+        .header h1 { font-size: 2rem; letter-spacing: -0.5px; font-weight: 700; }
+        .header p { margin-top: 0.5rem; opacity: 0.9; }
+        form { padding: 2rem; }
+        .question-block { margin-bottom: 2rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 1.5rem; }
+        .question-label { font-weight: 600; font-size: 1.1rem; margin-bottom: 0.75rem; display: block; color: #1e293b; }
+        .options { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.5rem; }
+        .option-item { display: flex; align-items: center; gap: 0.5rem; background: #f8fafc; padding: 0.5rem 1rem; border-radius: 2rem; border: 1px solid #cbd5e1; }
+        .option-item input { width: 1.2rem; height: 1.2rem; accent-color: #2E7D32; }
+        .checkbox-group { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 0.5rem; }
+        .checkbox-group label { display: flex; align-items: center; gap: 0.4rem; background: #f1f5f9; padding: 0.4rem 1rem; border-radius: 2rem; }
+        input[type="text"], input[type="email"], input[type="number"] { width: 100%; max-width: 400px; padding: 0.6rem 1rem; border-radius: 1.5rem; border: 1px solid #cbd5e1; font-size: 1rem; }
+        button { background: #2E7D32; color: white; border: none; padding: 0.8rem 2rem; font-size: 1.1rem; font-weight: bold; border-radius: 3rem; cursor: pointer; transition: background 0.2s; margin-top: 1rem; }
+        button:hover { background: #1b5e20; }
+        .footer { background: #f1f5f9; text-align: center; padding: 1rem; font-size: 0.8rem; color: #475569; }
+        @media (max-width: 640px) { .options { flex-direction: column; gap: 0.5rem; } .option-item { width: 100%; } .checkbox-group { flex-direction: column; } }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>🌿 MyKlinTown</h1>
+        <p>Questionnaire citoyen – Gestion intelligente des déchets</p>
+    </div>
+
+    <form action="https://formspree.io/f/xvzdwjal" method="POST">
+        <!-- Remplacez YOUR_FORM_ID par votre identifiant Formspree -->
+
+        <!-- ========== 1. Informations générales ========== -->
+        <div class="question-block">
+            <label class="question-label">1. Tranche d'âge</label>
+            <div class="options">
+                <label class="option-item"><input type="radio" name="age" value="Moins de 18 ans"> Moins de 18 ans</label>
+                <label class="option-item"><input type="radio" name="age" value="18–25 ans"> 18–25 ans</label>
+                <label class="option-item"><input type="radio" name="age" value="26–35 ans"> 26–35 ans</label>
+                <label class="option-item"><input type="radio" name="age" value="36–50 ans"> 36–50 ans</label>
+                <label class="option-item"><input type="radio" name="age" value="51–65 ans"> 51–65 ans</label>
+                <label class="option-item"><input type="radio" name="age" value="Plus de 65 ans"> Plus de 65 ans</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">2. Genre</label>
+            <div class="options">
+                <label class="option-item"><input type="radio" name="genre" value="Femme"> Femme</label>
+                <label class="option-item"><input type="radio" name="genre" value="Homme"> Homme</label>
+                <label class="option-item"><input type="radio" name="genre" value="Autre / préfère ne pas répondre"> Autre / préfère ne pas répondre</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">3. Situation professionnelle</label>
+            <div class="options">
+                <label class="option-item"><input type="radio" name="profession" value="Étudiant"> Étudiant</label>
+                <label class="option-item"><input type="radio" name="profession" value="Employé"> Employé</label>
+                <label class="option-item"><input type="radio" name="profession" value="Indépendant / Commerçant"> Indépendant / Commerçant</label>
+                <label class="option-item"><input type="radio" name="profession" value="Au foyer"> Au foyer</label>
+                <label class="option-item"><input type="radio" name="profession" value="Retraité"> Retraité</label>
+                <label class="option-item"><input type="radio" name="profession" value="Sans emploi"> Sans emploi</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">4. Commune de résidence</label>
+            <input type="text" name="commune" placeholder="Ex: Yaoundé 3, Douala 5...">
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">5. Quartier (ex: Mvog-Mbi, Mokolo, Etoudi...)</label>
+            <input type="text" name="quartier" placeholder="Nom du quartier">
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">6. Nombre de personnes dans le foyer</label>
+            <input type="number" name="foyer" min="1" max="20" step="1">
+        </div>
+
+        <!-- ========== 2. Habitudes actuelles ========== -->
+        <div class="question-block">
+            <label class="question-label">7. Comment gérez-vous vos déchets ? (plusieurs choix)</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="gestion" value="Sac sans tri"> Sac sans tri</label>
+                <label><input type="checkbox" name="gestion" value="Je trie (plastique, verre, papier)"> Je trie</label>
+                <label><input type="checkbox" name="gestion" value="Points de collecte communaux"> Points de collecte</label>
+                <label><input type="checkbox" name="gestion" value="Je brûle"> Je brûle</label>
+                <label><input type="checkbox" name="gestion" value="Enterre / abandonne"> Enterre / abandonne</label>
+                <label><input type="checkbox" name="gestion" value="Autre"> Autre : <input type="text" name="gestion_autre" placeholder="précisez" style="width:120px"></label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">8. Fréquence de vidage des bacs dans votre quartier</label>
+            <div class="options">
+                <label class="option-item"><input type="radio" name="frequence_vidage" value="Tous les jours"> Tous les jours</label>
+                <label class="option-item"><input type="radio" name="frequence_vidage" value="2–3 fois par semaine"> 2–3 fois/semaine</label>
+                <label class="option-item"><input type="radio" name="frequence_vidage" value="Une fois par semaine"> 1 fois/semaine</label>
+                <label class="option-item"><input type="radio" name="frequence_vidage" value="Une fois toutes les deux semaines"> 1 fois/2 semaines</label>
+                <label class="option-item"><input type="radio" name="frequence_vidage" value="Rarement / débordent"> Rarement / débordent</label>
+                <label class="option-item"><input type="radio" name="frequence_vidage" value="Je ne sais pas"> Je ne sais pas</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">9. Avez-vous déjà rencontré un problème de débordement ou dépôt sauvage près de chez vous ?</label>
+            <div class="options">
+                <label class="option-item"><input type="radio" name="depot_sauvage" value="Jamais"> Jamais</label>
+                <label class="option-item"><input type="radio" name="depot_sauvage" value="Rarement (1-2 fois/an)"> Rarement</label>
+                <label class="option-item"><input type="radio" name="depot_sauvage" value="Occasionnellement (tous les mois)"> Occasionnellement</label>
+                <label class="option-item"><input type="radio" name="depot_sauvage" value="Fréquemment (plusieurs fois/mois)"> Fréquemment</label>
+                <label class="option-item"><input type="radio" name="depot_sauvage" value="Très fréquemment (chaque semaine)"> Très fréquemment</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">10. Que faites-vous généralement en cas de dépôt sauvage ?</label>
+            <div class="options">
+                <label class="option-item"><input type="radio" name="action_depot" value="Je n'y prête pas attention"> Je n'y prête pas attention</label>
+                <label class="option-item"><input type="radio" name="action_depot" value="Je me plains aux voisins"> Je me plains aux voisins</label>
+                <label class="option-item"><input type="radio" name="action_depot" value="Je signale à la mairie / HYSACAM"> Je signale</label>
+                <label class="option-item"><input type="radio" name="action_depot" value="Je nettoie moi-même"> Je nettoie moi-même</label>
+                <label class="option-item"><input type="radio" name="action_depot" value="Autre"> Autre : <input type="text" name="action_depot_autre" placeholder="précisez" style="width:120px"></label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">11. Seriez-vous prêt à payer une petite contribution mensuelle (500–2000 FCFA) pour une collecte plus efficace et un suivi en temps réel ?</label>
+            <div class="options">
+                <label class="option-item"><input type="radio" name="contribution" value="Oui, tout à fait"> Oui, tout à fait</label>
+                <label class="option-item"><input type="radio" name="contribution" value="Peut-être, selon les services"> Peut-être</label>
+                <label class="option-item"><input type="radio" name="contribution" value="Non"> Non</label>
+            </div>
+        </div>
+
+        <!-- ========== 3. Connaissance et intérêt MyKlinTown ========== -->
+        <div class="question-block">
+            <label class="question-label">12. Avez-vous déjà entendu parler des bacs connectés ou applications de signalement ?</label>
+            <div class="options">
+                <label class="option-item"><input type="radio" name="connaissance" value="Oui"> Oui</label>
+                <label class="option-item"><input type="radio" name="connaissance" value="Non"> Non</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">13. Quelles fonctionnalités vous intéressent dans une application MyKlinTown ? (plusieurs choix)</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="interet_fonctions" value="Voir l'état des bacs sur carte"> Voir l'état des bacs</label>
+                <label><input type="checkbox" name="interet_fonctions" value="Signaler un dépôt sauvage avec photo"> Signaler avec photo</label>
+                <label><input type="checkbox" name="interet_fonctions" value="Gagner des points (gamification)"> Gagner des points</label>
+                <label><input type="checkbox" name="interet_fonctions" value="Échanger des points contre des réductions"> Échanger des points</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">14. Sur une échelle de 1 à 5, quel est votre intérêt pour une telle application ?</label>
+            <div class="options">
+                <label class="option-item"><input type="radio" name="interet_note" value="1"> 1 – Pas intéressé</label>
+                <label class="option-item"><input type="radio" name="interet_note" value="2"> 2 – Peu intéressé</label>
+                <label class="option-item"><input type="radio" name="interet_note" value="3"> 3 – Moyennement</label>
+                <label class="option-item"><input type="radio" name="interet_note" value="4"> 4 – Intéressé</label>
+                <label class="option-item"><input type="radio" name="interet_note" value="5"> 5 – Très intéressé</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">15. À quelle fréquence l'utiliseriez-vous ?</label>
+            <div class="options">
+                <label class="option-item"><input type="radio" name="frequence_usage" value="Plusieurs fois par jour"> Plusieurs fois/jour</label>
+                <label class="option-item"><input type="radio" name="frequence_usage" value="Une fois par jour"> 1 fois/jour</label>
+                <label class="option-item"><input type="radio" name="frequence_usage" value="Quelques fois par semaine"> Quelques fois/semaine</label>
+                <label class="option-item"><input type="radio" name="frequence_usage" value="Une fois par semaine"> 1 fois/semaine</label>
+                <label class="option-item"><input type="radio" name="frequence_usage" value="Rarement"> Rarement</label>
+            </div>
+        </div>
+
+        <!-- Gamification -->
+        <div class="question-block">
+            <label class="question-label">16. La gamification (points, badges) peut-elle vous motiver à mieux trier ?</label>
+            <div class="options">
+                <label class="option-item"><input type="radio" name="gamification_motivation" value="Oui, beaucoup"> Oui, beaucoup</label>
+                <label class="option-item"><input type="radio" name="gamification_motivation" value="Un peu"> Un peu</label>
+                <label class="option-item"><input type="radio" name="gamification_motivation" value="Pas du tout"> Pas du tout</label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">17. Quels types de récompenses préféreriez-vous ?</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="recompenses" value="Réductions supermarchés"> Réductions supermarchés</label>
+                <label><input type="checkbox" name="recompenses" value="Produits éco-responsables"> Produits éco-responsables</label>
+                <label><input type="checkbox" name="recompenses" value="Places de cinéma / loisirs"> Loisirs</label>
+                <label><input type="checkbox" name="recompenses" value="Réduction taxe ordures"> Réduction taxe ordures</label>
+                <label><input type="checkbox" name="recompenses" value="Reconnaissance publique"> Reconnaissance publique</label>
+                <label><input type="checkbox" name="recompenses" value="Autre"> Autre : <input type="text" name="recompenses_autre" placeholder="précisez" style="width:120px"></label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">18. Seriez-vous prêt à partager vos performances (points, classement) publiquement ?</label>
+            <div class="options">
+                <label class="option-item"><input type="radio" name="partage_performance" value="Oui, en public"> Oui, public</label>
+                <label class="option-item"><input type="radio" name="partage_performance" value="Uniquement avec mes amis"> Amis seulement</label>
+                <label class="option-item"><input type="radio" name="partage_performance" value="Non, anonyme"> Non, anonyme</label>
+            </div>
+        </div>
+
+        <!-- Attentes -->
+        <div class="question-block">
+            <label class="question-label">19. Quels sont selon vous les trois principaux problèmes liés aux déchets dans votre quartier ?</label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="problemes" value="Manque de bacs"> Manque de bacs</label>
+                <label><input type="checkbox" name="problemes" value="Bacs toujours pleins"> Bacs toujours pleins</label>
+                <label><input type="checkbox" name="problemes" value="Dépôts sauvages"> Dépôts sauvages</label>
+                <label><input type="checkbox" name="problemes" value="Non-respect des jours de collecte"> Non-respect des jours</label>
+                <label><input type="checkbox" name="problemes" value="Absence de tri sélectif"> Absence de tri</label>
+                <label><input type="checkbox" name="problemes" value="Odeurs / insalubrité"> Odeurs / insalubrité</label>
+                <label><input type="checkbox" name="problemes" value="Autre"> Autre : <input type="text" name="problemes_autre" placeholder="précisez" style="width:120px"></label>
+            </div>
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">20. Suggestions pour améliorer la gestion des déchets dans votre commune/quartier ?</label>
+            <input type="text" name="suggestions" style="width:100%" placeholder="Votre idée...">
+        </div>
+
+        <div class="question-block">
+            <label class="question-label">21. Acceptez-vous d'être recontacté pour tester le prototype ?</label>
+            <div class="options">
+                <label class="option-item"><input type="radio" name="recontact" value="Oui"> Oui, email : <input type="email" name="email" placeholder="votre@email.com" style="width:200px"></label>
+                <label class="option-item"><input type="radio" name="recontact" value="Non"> Non</label>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <button type="submit">Envoyer mes réponses ✅</button>
+        </div>
+    </form>
+    <div class="footer">
+        MyKlinTown – Ensemble pour une ville plus propre. Vos données sont confidentielles.
+    </div>
+</div>
+</body>
+</html>
